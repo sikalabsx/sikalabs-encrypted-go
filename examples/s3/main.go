@@ -9,7 +9,7 @@ import (
 )
 
 func main() {
-	s3Config := encrypted.GetConfigSikaLabsXEncryptedBucket1()
+	s3Config := encrypted.GetConfigSikaLabsEncryptedBucket1()
 	printStructAsJSON(s3Config)
 
 	s3createFile(

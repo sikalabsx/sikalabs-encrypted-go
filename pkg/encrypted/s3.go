@@ -11,7 +11,7 @@ type S3Config struct {
 	SecretKey  string
 }
 
-func GetConfigSikaLabsXEncryptedBucket1() S3Config {
+func GetConfigSikaLabsEncryptedBucket1() S3Config {
 	return S3Config{
 		BucketName: "sikalabs-encrypted-bucket-1",
 		Region:     "eu-central-1",
