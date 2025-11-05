@@ -17,3 +17,6 @@
 *.local.json
 *.local.txt
 Makefile.local.mk
+
+# App
+.SIKALABS_ENCRYPTED_PASSWORD
