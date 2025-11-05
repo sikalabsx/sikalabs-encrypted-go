@@ -15,7 +15,7 @@ func GetConfigSikaLabsXEncryptedBucket1() S3Config {
 	return S3Config{
 		BucketName: "sikalabs-encrypted-bucket-1",
 		Region:     "eu-central-1",
-		AccessKey:  decrypt.DecryptOrDie(ENCRYPTED_S3_ACCESS_KEY),
-		SecretKey:  decrypt.DecryptOrDie(ENCRYPTED_S3_SECRET_KEY),
+		AccessKey:  decrypt.DecryptOrDie(SIKALABS_ENCRYPTED_BUCKET_1_ACCESS_KEY),
+		SecretKey:  decrypt.DecryptOrDie(SIKALABS_ENCRYPTED_BUCKET_1_SECRET_KEY),
 	}
 }
