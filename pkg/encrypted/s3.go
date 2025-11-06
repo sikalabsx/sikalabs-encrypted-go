@@ -12,19 +12,38 @@ type S3Config struct {
 }
 
 func GetConfigSikaLabsEncryptedBucket1() (S3Config, error) {
-	accessKey, err := decrypt.Decrypt(SIKALABS_ENCRYPTED_BUCKET_1_ACCESS_KEY)
+	return getConfigSikaLabsEncryptedBucket(
+		"eu-central-1",
+		SIKALABS_ENCRYPTED_BUCKET_1_NAME,
+		SIKALABS_ENCRYPTED_BUCKET_1_ACCESS_KEY,
+		SIKALABS_ENCRYPTED_BUCKET_1_SECRET_KEY,
+	)
+}
+
+func getConfigSikaLabsEncryptedBucket(
+	region,
+	encryptedBucketName,
+	encryptedAccessKey,
+	encryptedSecretKey string,
+) (S3Config, error) {
+	bucketName, err := decrypt.Decrypt(encryptedBucketName)
 	if err != nil {
 		return S3Config{}, err
 	}
 
-	secretKey, err := decrypt.Decrypt(SIKALABS_ENCRYPTED_BUCKET_1_SECRET_KEY)
+	accessKey, err := decrypt.Decrypt(encryptedAccessKey)
+	if err != nil {
+		return S3Config{}, err
+	}
+
+	secretKey, err := decrypt.Decrypt(encryptedSecretKey)
 	if err != nil {
 		return S3Config{}, err
 	}
 
 	return S3Config{
-		BucketName: "sikalabs-encrypted-bucket-1",
-		Region:     "eu-central-1",
+		Region:     region,
+		BucketName: bucketName,
 		AccessKey:  accessKey,
 		SecretKey:  secretKey,
 	}, nil
