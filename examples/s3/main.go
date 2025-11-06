@@ -22,6 +22,13 @@ func main() {
 	)
 	s3ListFiles(s3Config)
 	s3PrintFile(s3Config, "sikalabs_encrypted_go_test.txt")
+
+	s3Config2, err := encrypted.GetConfigSikaLabsEncryptedBucket2()
+	handleError(err)
+
+	printStructAsJSON(s3Config2)
+
+	s3ListFiles(s3Config2)
 }
 
 func printStructAsJSON(v interface{}) {
