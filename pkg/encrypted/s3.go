@@ -29,6 +29,15 @@ func GetConfigSikaLabsEncryptedBucket2() (S3Config, error) {
 	)
 }
 
+func GetConfigSikaLabsEncryptedBucket3() (S3Config, error) {
+	return getConfigSikaLabsEncryptedBucket(
+		"eu-central-1",
+		SIKALABS_ENCRYPTED_BUCKET_3_NAME,
+		SIKALABS_ENCRYPTED_BUCKET_3_ACCESS_KEY,
+		SIKALABS_ENCRYPTED_BUCKET_3_SECRET_KEY,
+	)
+}
+
 func getConfigSikaLabsEncryptedBucket(
 	region,
 	encryptedBucketName,
