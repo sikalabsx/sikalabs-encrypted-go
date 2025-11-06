@@ -1,7 +1,7 @@
 package encrypted
 
 import (
-	"github.com/sikalabs/sikalabs-encrypted-go/internal/decrypt"
+	"github.com/sikalabsx/sikalabs-encrypted-go/internal/decrypt"
 )
 
 type S3Config struct {

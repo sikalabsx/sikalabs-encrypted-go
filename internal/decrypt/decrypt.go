@@ -2,7 +2,7 @@ package decrypt
 
 import (
 	"github.com/sikalabs/sikalabs-crypt-go/pkg/sikalabs_crypt"
-	"github.com/sikalabs/sikalabs-encrypted-go/internal/password"
+	"github.com/sikalabsx/sikalabs-encrypted-go/internal/password"
 )
 
 func Decrypt(encrypted string) (string, error) {

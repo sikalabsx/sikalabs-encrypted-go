@@ -1,4 +1,4 @@
-module github.com/sikalabs/sikalabs-encrypted-go
+module github.com/sikalabsx/sikalabs-encrypted-go
 
 go 1.25.3
 

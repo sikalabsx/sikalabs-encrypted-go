@@ -10,7 +10,7 @@ import (
 	awsConfig "github.com/aws/aws-sdk-go-v2/config"
 	"github.com/aws/aws-sdk-go-v2/credentials"
 	"github.com/aws/aws-sdk-go-v2/service/s3"
-	"github.com/sikalabs/sikalabs-encrypted-go/pkg/encrypted"
+	"github.com/sikalabsx/sikalabs-encrypted-go/pkg/encrypted"
 )
 
 func s3PrintFile(cfg encrypted.S3Config, name string) {

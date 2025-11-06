@@ -6,7 +6,7 @@ import (
 	"log"
 	"time"
 
-	"github.com/sikalabs/sikalabs-encrypted-go/pkg/encrypted"
+	"github.com/sikalabsx/sikalabs-encrypted-go/pkg/encrypted"
 )
 
 func main() {
