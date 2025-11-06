@@ -11,11 +11,21 @@ type S3Config struct {
 	SecretKey  string
 }
 
-func GetConfigSikaLabsEncryptedBucket1() S3Config {
+func GetConfigSikaLabsEncryptedBucket1() (S3Config, error) {
+	accessKey, err := decrypt.Decrypt(SIKALABS_ENCRYPTED_BUCKET_1_ACCESS_KEY)
+	if err != nil {
+		return S3Config{}, err
+	}
+
+	secretKey, err := decrypt.Decrypt(SIKALABS_ENCRYPTED_BUCKET_1_SECRET_KEY)
+	if err != nil {
+		return S3Config{}, err
+	}
+
 	return S3Config{
 		BucketName: "sikalabs-encrypted-bucket-1",
 		Region:     "eu-central-1",
-		AccessKey:  decrypt.DecryptOrDie(SIKALABS_ENCRYPTED_BUCKET_1_ACCESS_KEY),
-		SecretKey:  decrypt.DecryptOrDie(SIKALABS_ENCRYPTED_BUCKET_1_SECRET_KEY),
-	}
+		AccessKey:  accessKey,
+		SecretKey:  secretKey,
+	}, nil
 }

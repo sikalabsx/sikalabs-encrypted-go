@@ -3,13 +3,16 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"log"
 	"time"
 
 	"github.com/sikalabs/sikalabs-encrypted-go/pkg/encrypted"
 )
 
 func main() {
-	s3Config := encrypted.GetConfigSikaLabsEncryptedBucket1()
+	s3Config, err := encrypted.GetConfigSikaLabsEncryptedBucket1()
+	handleError(err)
+
 	printStructAsJSON(s3Config)
 
 	s3createFile(
@@ -24,4 +27,10 @@ func main() {
 func printStructAsJSON(v interface{}) {
 	b, _ := json.MarshalIndent(v, "", "  ")
 	fmt.Println(string(b))
+}
+
+func handleError(err error) {
+	if err != nil {
+		log.Fatalln(err)
+	}
 }

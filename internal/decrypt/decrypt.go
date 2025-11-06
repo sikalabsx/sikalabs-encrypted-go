@@ -1,19 +1,23 @@
 package decrypt
 
 import (
-	"log"
-
 	"github.com/sikalabs/sikalabs-crypt-go/pkg/sikalabs_crypt"
 	"github.com/sikalabs/sikalabs-encrypted-go/internal/password"
 )
 
-func DecryptOrDie(encrypted string) string {
+func Decrypt(encrypted string) (string, error) {
+	password, err := password.GetPassword()
+	if err != nil {
+		return "", err
+	}
+
 	decrypted, err := sikalabs_crypt.SikaLabsSymmetricDecryptV1(
-		password.GetPasswordOrDie(),
+		password,
 		encrypted,
 	)
 	if err != nil {
-		log.Fatalln("Failed to decrypt:", err)
+		return "", err
 	}
-	return decrypted
+
+	return decrypted, nil
 }
