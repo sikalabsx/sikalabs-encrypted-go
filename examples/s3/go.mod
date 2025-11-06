@@ -9,6 +9,7 @@ require (
 	github.com/aws/aws-sdk-go-v2/config v1.31.17
 	github.com/aws/aws-sdk-go-v2/credentials v1.18.21
 	github.com/aws/aws-sdk-go-v2/service/s3 v1.90.0
+	github.com/sikalabs-go/sikalabs-s3-go v0.0.0-20251106023739-454937088a9c
 	github.com/sikalabsx/sikalabs-encrypted-go v0.0.0-00010101000000-000000000000
 )
 

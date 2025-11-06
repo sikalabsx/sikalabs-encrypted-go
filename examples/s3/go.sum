@@ -34,6 +34,8 @@ github.com/aws/aws-sdk-go-v2/service/sts v1.39.1 h1:mLlUgHn02ue8whiR4BmxxGJLR2gw
 github.com/aws/aws-sdk-go-v2/service/sts v1.39.1/go.mod h1:E19xDjpzPZC7LS2knI9E6BaRFDK43Eul7vd6rSq2HWk=
 github.com/aws/smithy-go v1.23.2 h1:Crv0eatJUQhaManss33hS5r40CG3ZFH+21XSkqMrIUM=
 github.com/aws/smithy-go v1.23.2/go.mod h1:LEj2LM3rBRQJxPZTB4KuzZkaZYnZPnvgIhb4pu07mx0=
+github.com/sikalabs-go/sikalabs-s3-go v0.0.0-20251106023739-454937088a9c h1:J+2kkQG/YUT0gK8IeD5KPbeietG4M+gbfManbA5Grgs=
+github.com/sikalabs-go/sikalabs-s3-go v0.0.0-20251106023739-454937088a9c/go.mod h1:wuuKPhIDu67fBN+e0SzOe9FKKW/SZEHKT5qNORuKnaU=
 github.com/sikalabs/sikalabs-crypt-go v0.0.0-20251105174759-2ff0fb3fb552 h1:EiLCh0kiHlgJXz1TKD8mfy3qFgnkFiX9TthlKHO/U8Y=
 github.com/sikalabs/sikalabs-crypt-go v0.0.0-20251105174759-2ff0fb3fb552/go.mod h1:TrthX6be5utClxOieSRN8T3DOlFZ1oaK/9Ye2oCFaFg=
 golang.org/x/crypto v0.43.0 h1:dduJYIi3A3KOfdGOHX8AVZ/jGiyPa3IbBozJ5kNuE04=
