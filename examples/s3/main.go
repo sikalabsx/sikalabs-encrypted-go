@@ -29,6 +29,13 @@ func main() {
 	printStructAsJSON(s3Config2)
 
 	s3ListFiles(s3Config2)
+
+	s3Config3, err := encrypted.GetConfigSikaLabsEncryptedBucket3()
+	handleError(err)
+
+	printStructAsJSON(s3Config3)
+
+	s3ListFiles(s3Config3)
 }
 
 func printStructAsJSON(v interface{}) {
