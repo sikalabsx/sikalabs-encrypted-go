@@ -1,12 +1,14 @@
 package encrypted
 
 import (
+	"strconv"
+
 	"github.com/sikalabsx/sikalabs-encrypted-go/internal/decrypt"
 )
 
 type TelegramConfig struct {
 	Token  string
-	ChatID string
+	ChatID int64
 }
 
 func GetOndrejSikaCITelegramConfig() (TelegramConfig, error) {
@@ -15,7 +17,12 @@ func GetOndrejSikaCITelegramConfig() (TelegramConfig, error) {
 		return TelegramConfig{}, err
 	}
 
-	chatID, err := decrypt.Decrypt(TELEGRAM_ONDREJSIKA_CI_NOTIFICATION_CHAT_ID)
+	chatIDStr, err := decrypt.Decrypt(TELEGRAM_ONDREJSIKA_CI_NOTIFICATION_CHAT_ID)
+	if err != nil {
+		return TelegramConfig{}, err
+	}
+
+	chatID, err := strconv.ParseInt(chatIDStr, 10, 64)
 	if err != nil {
 		return TelegramConfig{}, err
 	}
