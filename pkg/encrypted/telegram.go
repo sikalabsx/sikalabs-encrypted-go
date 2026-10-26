@@ -32,3 +32,25 @@ func GetOndrejSikaCITelegramConfig() (TelegramConfig, error) {
 		ChatID: chatID,
 	}, nil
 }
+
+func GetSikalabsNotificationV1TelegramConfig() (TelegramConfig, error) {
+	token, err := decrypt.DecryptWithSuffix(SIKALABS_NOTIFICATION_V1_TOKEN, "_SIKALABS_NOTIFICATION_V1")
+	if err != nil {
+		return TelegramConfig{}, err
+	}
+
+	chatIDStr, err := decrypt.DecryptWithSuffix(SIKALABS_NOTIFICATION_V1_CHAT_ID, "_SIKALABS_NOTIFICATION_V1")
+	if err != nil {
+		return TelegramConfig{}, err
+	}
+
+	chatID, err := strconv.ParseInt(chatIDStr, 10, 64)
+	if err != nil {
+		return TelegramConfig{}, err
+	}
+
+	return TelegramConfig{
+		Token:  token,
+		ChatID: chatID,
+	}, nil
+}
