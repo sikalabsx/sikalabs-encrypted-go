@@ -13,7 +13,16 @@ func main() {
 
 	err = telegram_utils.TelegramSendMessage(
 		telegramConfig.Token, telegramConfig.ChatID,
-		"TEST: This is a test message from SikaLabs Encrypted Go package.",
+		"TEST: 1: This is a test message from SikaLabs Encrypted Go package.",
+	)
+	handleError(err)
+
+	telegramConfig, err = encrypted.GetSikalabsNotificationV1TelegramConfig()
+	handleError(err)
+
+	err = telegram_utils.TelegramSendMessage(
+		telegramConfig.Token, telegramConfig.ChatID,
+		"TEST: 2: This is a test message from SikaLabs Encrypted Go package.",
 	)
 	handleError(err)
 }
