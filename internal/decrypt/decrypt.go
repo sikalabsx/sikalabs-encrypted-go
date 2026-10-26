@@ -5,8 +5,8 @@ import (
 	"github.com/sikalabsx/sikalabs-encrypted-go/internal/password"
 )
 
-func Decrypt(encrypted string) (string, error) {
-	password, err := password.GetPassword()
+func DecryptWithSuffix(encrypted string, suffix string) (string, error) {
+	password, err := password.GetPasswordWithSuffix(suffix)
 	if err != nil {
 		return "", err
 	}
@@ -20,4 +20,8 @@ func Decrypt(encrypted string) (string, error) {
 	}
 
 	return decrypted, nil
+}
+
+func Decrypt(encrypted string) (string, error) {
+	return DecryptWithSuffix(encrypted, "")
 }
